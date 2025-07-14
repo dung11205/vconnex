@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đã tư vấn</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4 text-success">Danh sách đã tư vấn</h2>
+    <a href="/admin" class="btn btn-secondary mb-3">← Quay lại danh sách chờ</a>
+    <table class="table table-bordered bg-white shadow-sm">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>Họ tên</th>
+          <th>Số điện thoại</th>
+          <th>Gói quan tâm</th>
+          <th>Ghi chú</th>
+          <th>Ngày tư vấn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (consultations.length === 0) { %>
+          <tr><td colspan="6" class="text-center">Chưa có bản ghi nào</td></tr>
+        <% } else { %>
+          <% consultations.forEach((item, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= item.name %></td>
+              <td><%= item.phone %></td>
+              <td><%= item.solution %></td>
+              <td><%= item.message %></td>
+              <td><%= new Date(item.updatedAt).toLocaleString('vi-VN') %></td>
+            </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+    
