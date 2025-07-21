@@ -2,51 +2,136 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Trang quản trị - Tư vấn</title>
+  <title>Trang quản trị Vconnex</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <style>
+    body { background: #f7f9fc; }
+    .sidebar { min-height: 100vh; background: #ffffff; border-right: 1px solid #ddd; }
+    .sidebar a { display: block; padding: 12px 20px; color: #333; text-decoration: none; }
+    .sidebar a.active, .sidebar a:hover { background: #e9ecef; font-weight: bold; }
+  </style>
 </head>
-<body class="bg-light">
-  <div class="container py-5">
-    <h2 class="mb-4 text-primary">Danh sách đăng ký tư vấn (chưa xử lý)</h2>
-    <a href="/admin/done" class="btn btn-secondary mb-3">Xem danh sách đã tư vấn</a>
+<body>
+  <div id="adminApp" class="container-fluid">
+    <div class="row">
+      
+      <!-- Sidebar trái -->
+      <div class="col-md-3 col-lg-2 sidebar">
+        <h5 class="mt-4 mb-3 px-3 text-primary">Quản trị</h5>
+        <a href="#" :class="{active: tab==='consultations'}" @click.prevent="tab='consultations'">📋 Danh sách đăng ký</a>
+        <a href="#" :class="{active: tab==='products'}" @click.prevent="tab='products'">📦 Quản lý sản phẩm</a>
+      </div>
 
-    <table class="table table-bordered bg-white shadow-sm">
-      <thead class="table-light">
-        <tr>
-          <th>#</th>
-          <th>Họ tên</th>
-          <th>Số điện thoại</th>
-          <th>Gói quan tâm</th>
-          <th>Ghi chú</th>
-          <th>Ngày gửi</th>
-          <th>Thao tác</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% if (consultations.length === 0) { %>
-          <tr><td colspan="7" class="text-center">Chưa có đăng ký nào</td></tr>
-        <% } else { %>
-          <% consultations.forEach((item, index) => { %>
-            <tr>
-              <td><%= index + 1 %></td>
-              <td><%= item.name %></td>
-              <td><%= item.phone %></td>
-              <td><%= item.solution %></td>
-              <td><%= item.message %></td>
-              <td><%= new Date(item.createdAt).toLocaleString('vi-VN') %></td>
-              <td>
-                <form method="POST" action="/admin/mark-done/<%= item._id %>" class="d-inline">
-                  <button class="btn btn-success btn-sm">Đã tư vấn</button>
-                </form>
-                <form method="POST" action="/admin/delete/<%= item._id %>" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa?')">
-                  <button class="btn btn-danger btn-sm">Xóa</button>
-                </form>
-              </td>
-            </tr>
-          <% }) %>
-        <% } %>
-      </tbody>
-    </table>
+      <!-- Phần nội dung phải -->
+      <div class="col-md-9 col-lg-10 py-4">
+
+        <!-- Danh sách đăng ký -->
+        <div v-if="tab==='consultations'">
+          <h4 class="mb-3 text-primary">Danh sách đăng ký tư vấn (chưa xử lý)</h4>
+          <a href="/admin/done" class="btn btn-secondary mb-3">Xem danh sách đã tư vấn</a>
+
+          <table class="table table-bordered bg-white shadow-sm">
+            <thead class="table-light">
+              <tr><th>#</th><th>Họ tên</th><th>SĐT</th><th>Gói</th><th>Ghi chú</th><th>Ngày gửi</th><th>Thao tác</th></tr>
+            </thead>
+            <tbody>
+              <% if (consultations.length === 0) { %>
+                <tr><td colspan="7" class="text-center">Chưa có đăng ký nào</td></tr>
+              <% } else { %>
+                <% consultations.forEach((item, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.phone %></td>
+                    <td><%= item.solution %></td>
+                    <td><%= item.message %></td>
+                    <td><%= new Date(item.createdAt).toLocaleString('vi-VN') %></td>
+                    <td>
+                      <form method="POST" action="/admin/mark-done/<%= item._id %>" class="d-inline">
+                        <button class="btn btn-success btn-sm">Đã tư vấn</button>
+                      </form>
+                      <form method="POST" action="/admin/delete/<%= item._id %>" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa?')">
+                        <button class="btn btn-danger btn-sm">Xóa</button>
+                      </form>
+                    </td>
+                  </tr>
+                <% }) %>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Quản lý sản phẩm -->
+        <div v-if="tab==='products'">
+          <h4 class="mb-4 text-success">Quản lý sản phẩm</h4>
+          <form @submit.prevent="addProduct" class="row g-3 mb-4">
+            <div class="col-md-3"><input v-model="form.name" class="form-control" placeholder="Tên sản phẩm" required></div>
+            <div class="col-md-3"><input v-model="form.imageUrl" class="form-control" placeholder="Link ảnh" required></div>
+            <div class="col-md-2"><input v-model="form.price" type="number" class="form-control" placeholder="Giá" required></div>
+            <div class="col-md-4"><input v-model="form.description" class="form-control" placeholder="Mô tả"></div>
+            <div class="col-12"><button class="btn btn-primary">+ Thêm sản phẩm</button></div>
+          </form>
+
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr><th>Ảnh</th><th>Tên</th><th>Giá</th><th>Mô tả</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr v-for="p in products" :key="p._id">
+                <td><img :src="p.imageUrl" width="60" /></td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }} đ</td>
+                <td>{{ p.description }}</td>
+                <td><button @click="deleteProduct(p._id)" class="btn btn-sm btn-danger">Xoá</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
   </div>
+
+  <script>
+    const { createApp, reactive, ref, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        const tab = ref('consultations');
+        const products = reactive([]);
+        const form = reactive({ name: '', imageUrl: '', price: '', description: '' });
+
+        const fetchProducts = async () => {
+          const res = await fetch('/api/products');
+          const data = await res.json();
+          products.splice(0, products.length, ...data);
+        };
+
+        const addProduct = async () => {
+          const res = await fetch('/api/products', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(form)
+          });
+          if (res.ok) {
+            Object.assign(form, { name: '', imageUrl: '', price: '', description: '' });
+            await fetchProducts();
+          }
+        };
+
+        const deleteProduct = async (id) => {
+          if (confirm('Bạn có chắc muốn xoá sản phẩm này?')) {
+            await fetch(`/api/products/${id}`, { method: 'DELETE' });
+            await fetchProducts();
+          }
+        };
+
+        onMounted(fetchProducts);
+
+        return { tab, products, form, addProduct, deleteProduct };
+      }
+    }).mount('#adminApp');
+  </script>
 </body>
 </html>

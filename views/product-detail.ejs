@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= product.name %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .product-detail {
+      background: #fff;
+      padding-top: 70px; /* Đảm bảo nội dung không bị che bởi header fixed */
+    }
+    .product-detail .swiper {
+      width: 100%;
+      height: 350px;
+      margin-bottom: 20px;
+    }
+    .product-detail .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .product-detail h3 {
+      color: #003a78;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    .product-detail h4 {
+      color: #f25a29;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+    .product-detail .btn-consult {
+      background-color: #f25a29;
+      color: white;
+      font-weight: bold;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .product-detail ul {
+      padding-left: 0;
+    }
+    .product-detail ul li {
+      list-style: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .product-detail ul li i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="fixed-top bg-white py-3 px-4 d-flex justify-content-between align-items-center shadow-sm border-bottom" style="z-index: 1030;">
+  <a href="/">
+    <img src="/images/tt.png" alt="Vconnex Logo" style="height: 40px;">
+  </a>
+  <nav class="d-flex align-items-center">
+    <a href="/" class="text-primary me-4 text-decoration-none fw-semibold">Giới thiệu</a>
+    <a href="/products" class="text-primary me-4 text-decoration-none fw-semibold">Sản phẩm</a>
+    <a href="#" class="text-primary me-4 text-decoration-none fw-semibold">Giải pháp</a>
+    <a href="#" class="text-primary me-4 text-decoration-none fw-semibold">Công trình tiêu biểu</a>
+    <a href="#" class="text-primary me-4 text-decoration-none fw-semibold">Hợp tác</a>
+    <a href="#" class="text-primary me-4 text-decoration-none fw-semibold">Hỗ trợ</a>
+    <a href="#" class="text-primary me-4 text-decoration-none fw-semibold">Tin tức</a>
+    <img src="/images/vn-flag.png" alt="Vietnamese" style="height: 16px;" class="ms-2">
+  </nav>
+</header>
+
+
+  <div class="container py-5 product-detail">
+    <div class="row g-5 align-items-start">
+      <!-- Ảnh bên trái -->
+      <div class="col-lg-6">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <% product.images.forEach((img) => { %>
+              <div class="swiper-slide">
+                <img src="<%= img %>" alt="<%= product.name %>">
+              </div>
+            <% }) %>
+          </div>
+          <!-- Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- Thông tin bên phải -->
+      <div class="col-lg-6">
+        <h3 class="mb-3">THÔNG SỐ SẢN PHẨM</h3>
+        <h4 class="mb-3">Giá niêm yết: <%= product.price %></h4>
+        <a href="/contact?product=<%= product.slug %>" class="btn btn-consult mb-4">› Tư vấn ngay</a>
+
+        <ul class="list-unstyled">
+          <% if (product.specs) {
+            for (let key in product.specs) { %>
+              <li><i class="bi bi-check-circle-fill text-danger me-2"></i><strong><%= key %>:</strong> <%= product.specs[key] %></li>
+          <% }} %>
+        </ul>
+
+        <% if (product.features && product.features.length > 0) { %>
+          <ul class="list-unstyled mt-3">
+            <% product.features.forEach(feature => { %>
+              <li><i class="bi bi-check-circle-fill text-danger me-2"></i><%= feature %></li>
+            <% }) %>
+          </ul>
+        <% } %>
+        <p class="mt-3"><%= product.description %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+</body>
+</html>

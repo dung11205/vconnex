@@ -146,10 +146,12 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
           <% products.forEach(product => { %>
             <div class="col">
-              <div class="product-card h-100">
-                <img src="<%= product.image %>" alt="<%= product.name %>">
-                <h6><%= product.name %></h6>
-              </div>
+              <a href="/products/<%= product.slug %>" class="text-decoration-none text-dark">
+                <div class="product-card h-100">
+                  <img src="<%= product.image %>" alt="<%= product.name %>">
+                  <h6><%= product.name %></h6>
+                </div>
+              </a>
             </div>
           <% }) %>
         </div>
