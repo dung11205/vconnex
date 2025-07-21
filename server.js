@@ -12,7 +12,7 @@ if (!process.env.MONGODB_URI) {
   process.exit(1);
 }
 
-const app = express();
+const app = express();  
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +28,9 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 3600000 } // 1 hour
 }));
+ app.get('/solutions', (req, res) => {
+  res.render('solutions');
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
