@@ -49,6 +49,8 @@ app.use('/products', productRoutes);           // Render EJS
 app.use('/api/products', apiProductRoutes);    // Trả JSON cho fetch
 app.use('/consultation', consultationRoutes);
 app.use('/admin', adminRoutes);
+app.use(express.static('public'));
+
 
 // Trang chủ
 app.get('/', (req, res) => {
