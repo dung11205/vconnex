@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hỗ trợ - Vconnex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Main Content */
+    .contact-section {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600"><rect fill="%23f8f9fa" width="1920" height="600"/><path fill="%23e9ecef" opacity="0.5" d="M0,300 Q480,200 960,300 T1920,300 L1920,600 L0,600 Z"/></svg>');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.95) 100%);
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Contact Info Card */
+    .contact-info {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+
+    .contact-title {
+      color: #f15a24;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .contact-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: #f15a24;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      color: #f15a24;
+      font-size: 18px;
+      margin-right: 10px;
+      margin-top: 3px;
+      min-width: 20px;
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .contact-text {
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .contact-text a {
+      color: #4285f4;
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Registration Form */
+    .registration-form {
+      background: #003087;
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-badge {
+      background: #f15a24;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .form-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.8);
+      color: #333;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background: white;
+      box-shadow: 0 0 0 0.2rem rgba(241, 90, 36, 0.25);
+      border-color: #f15a24;
+    }
+
+    .form-control::placeholder {
+      color: #999;
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23666' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+    }
+
+    .form-check {
+      margin-bottom: 10px;
+    }
+
+    .form-check-input:checked {
+      background-color: #f15a24;
+      border-color: #f15a24;
+    }
+
+    .form-check-label {
+      color: rgba(255,255,255,0.9);
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .btn-submit {
+      background: #f15a24;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: #d14920;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(241, 90, 36, 0.3);
+    }
+
+    /* Maps Section */
+    .maps-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .maps-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 60px;
+    }
+
+    .map-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .map-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .map-header {
+      background: #4285f4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .map-container {
+      height: 300px;
+      position: relative;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 20px 0;
+      }
+      
+      .contact-info, .registration-form {
+        margin-bottom: 20px;
+      }
+      
+      .maps-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<%- include('partials/header') %>
+  <!-- Main Contact Section -->
+  <div class="contact-section">
+    <div class="container contact-content">
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-lg-6 mb-4">
+          <div class="contact-info fade-in">
+            <h2 class="contact-title">Thông tin liên hệ:</h2>
+
+            <div class="contact-item">
+              <i class="fas fa-phone contact-icon"></i>
+              <div class="contact-details">
+                <div class="contact-label">Hotline:</div>
+                <div class="contact-text">
+                  <a href="tel:086.826.6639">086.826.6639</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <div class="contact-details">
+                <div class="contact-label">Email:</div>
+                <div class="contact-text">
+                  <a href="mailto:info@vconnex.vn">info@vconnex.vn</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div class="contact-details">
+                <div class="contact-label">Trụ sở chính:</div>
+                <div class="contact-text">
+                  Tầng 4, Tòa nhà The Sun, Đường Mễ Trì, Phường Tú Liêm, Thành phố Hà Nội
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div class="contact-details">
+                <div class="contact-label">VP miền Trung:</div>
+                <div class="contact-text">
+                  Tòa nhà PVcomBank, Tầng 6, số 2 Đường 30/4, Phường Hòa Cường, Thành phố Đà Nẵng
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div class="contact-details">
+                <div class="contact-label">VP miền Nam:</div>
+                <div class="contact-text">
+                  Số 171 Nguyễn Thị Nhung, Phường Hiệp Bình, Thành phố Hồ Chí Minh
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="col-lg-6 mb-4">
+          <div class="registration-form fade-in">
+            <div class="form-header">
+              <div class="form-badge">Đăng ký</div>
+              <h3 class="form-title">Nhận tư vấn và hỗ trợ</h3>
+            </div>
+
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Họ và tên" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control form-select" required>
+                    <option value="">Tỉnh/Thành phố</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="haiphong">Hải Phòng</option>
+                    <option value="danang">Đà Nẵng</option>
+                    <option value="hcm">TP. Hồ Chí Minh</option>
+                    <option value="an Giang">An Giang</option>
+                    <option value="Ba Ria - Vung Tau">Bà Rịa - Vũng Tàu</option>
+                    <option value="Bac Giang">Bắc Giang</option>
+                    <option value="Bac Kan">Bắc Kạn</option>
+                    <option value="Bac Lieu">Bạc Liêu</option>
+                    <option value="Bac Ninh">Bắc Ninh</option>
+                    <option value="Ben Tre">Bến Tre</option>
+                    <option value="Binh Dinh">Bình Định</option>
+                    <option value="Binh Duong">Bình Dương</option>
+                    <option value="Binh Phuoc">Bình Phước</option>
+                    <option value="Binh Thuan">Bình Thuận</option>
+                    <option value="Ca Mau">Cà Mau</option>
+                    <option value="Can Tho">Cần Thơ</option>
+                    <option value="Cao Bang">Cao Bằng</option>
+                    <option value="Dak Lak">Đắk Lắk</option>
+                    <option value="Dak Nong">Đắk Nông</option>
+                    <option value="Dien Bien">Điện Biên</option>
+                    <option value="Dong Nai">Đồng Nai</option>
+                    <option value="Dong Thap">Đồng Tháp</option>
+                    <option value="Gia Lai">Gia Lai</option>
+                    <option value="Ha Giang">Hà Giang</option>
+                    <option value="Ha Nam">Hà Nam</option>
+                    <option value="Ha Tinh">Hà Tĩnh</option>
+                    <option value="Hai Duong">Hải Dương</option>
+                    <option value="Hau Giang">Hậu Giang</option>
+                    <option value="Hoa Binh">Hòa Bình</option>
+                    <option value="Hung Yen">Hưng Yên</option>
+                    <option value="Khanh Hoa">Khánh Hòa</option>
+                    <option value="Kien Giang">Kiên Giang</option>
+                    <option value="Kon Tum">Kon Tum</option>
+                    <option value="Lai Chau">Lai Châu</option>
+                    <option value="Lam Dong">Lâm Đồng</option>
+                    <option value="Lang Son">Lạng Sơn</option>
+                    <option value="Lao Cai">Lào Cai</option>
+                    <option value="Long An">Long An</option>
+                    <option value="Nam Dinh">Nam Định</option>
+                    <option value="Nghe An">Nghệ An</option>
+                    <option value="Ninh Binh">Ninh Bình</option>
+                    <option value="Ninh Thuan">Ninh Thuận</option>
+                    <option value="Phu Tho">Phú Thọ</option>
+                    <option value="Phu Yen">Phú Yên</option>
+                    <option value="Quang Binh">Quảng Bình</option>
+                    <option value="Quang Nam">Quảng Nam</option>
+                    <option value="Quang Ngai">Quảng Ngãi</option>
+                    <option value="Quang Ninh">Quảng Ninh</option>
+                    <option value="Quang Tri">Quảng Trị</option>
+                    <option value="Soc Trang">Sóc Trăng</option>
+                    <option value="Son La">Sơn La</option>
+                    <option value="Tay Ninh">Tây Ninh</option>
+                    <option value="Thai Binh">Thái Bình</option>
+                    <option value="Thai Nguyen">Thái Nguyên</option>
+                    <option value="Thanh Hoa">Thanh Hóa</option>
+                    <option value="Thua Thien Hue">Thừa Thiên Huế</option>
+                    <option value="Tien Giang">Tiền Giang</option>
+                    <option value="Tra Vinh">Trà Vinh</option>
+                    <option value="Tuyen Quang">Tuyên Quang</option>
+                    <option value="Vinh Long">Vĩnh Long</option>
+                    <option value="Vinh Phuc">Vĩnh Phúc</option>
+                    <option value="Yen Bai">Yên Bái</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" placeholder="Số điện thoại" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email" required>
+                </div>
+              </div>
+
+              <textarea class="form-control" rows="3" placeholder="Lời nhắn thêm... (không bắt buộc)"></textarea>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="smart-home">
+                <label class="form-check-label" for="smart-home">
+                  Tư vấn lắp đặt Nhà thông minh
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dealer">
+                <label class="form-check-label" for="dealer">
+                  Hợp tác Đại lý / Nhà phân phối
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="collaborator">
+                <label class="form-check-label" for="collaborator">
+                  Hợp tác Cộng tác viên
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-submit">
+                Gửi ngay <i class="fas fa-arrow-right ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maps Section -->
+  <div class="maps-section">
+    <div class="container">
+      <h2 class="maps-title fade-in">Bản đồ các văn phòng</h2>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="map-card fade-in">
+            <div class="map-header">Trụ sở chính Hà Nội</div>
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps?q=Vconnex%20H%C3%A0%20N%E1%BB%99i&output=embed"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="map-card fade-in">
+            <div class="map-header">Văn phòng Đà Nẵng</div>
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps?q=Vconnex%20%C4%90%C3%A0%20N%E1%BA%B5ng&output=embed"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="map-card fade-in">
+            <div class="map-header">Văn phòng Hồ Chí Minh</div>
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps?q=Vconnex%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <h6>VỀ VCONNEX</h6>
+          <ul>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Hướng dẫn sử dụng</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Chính sách giao hàng</a></li>
+          </ul>
+          <img src="/images/logoSaleNoti-300x114-1.png" alt="Thông báo">
+          <img src="/images/dmca-badge-w200-5x1-10.png" alt="DMCA">
+        </div>
+        <div class="col-md-3">
+          <h6>GIẢI PHÁP</h6>
+          <ul>
+            <li><a href="#">Nhà thông minh</a></li>
+            <li><a href="#">Quản lý tòa nhà</a></li>
+            <li><a href="#">Nhà máy thông minh</a></li>
+            <li><a href="#">Nông nghiệp thông minh</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>ỨNG DỤNG</h6>
+          <ul>
+            <li>Vhomenex (Android)</li>
+            <li>Vhomenex (iOS)</li>
+          </ul>
+          <h6 class="mt-4">KẾT NỐI</h6>
+          <ul class="d-flex gap-3">
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+          <h6 class="mt-4">CỘNG ĐỒNG</h6>
+          <p>Khởi nghiệp Smart Home</p>
+        </div>
+        <div class="col-md-3">
+          <h6>LIÊN HỆ</h6>
+          <p>Email: info@vconnex.vn</p>
+          <p>Hotline: 086 826 6639</p>
+          <p>Miền Bắc: 086 826 6637</p>
+          <p>Miền Trung: 086 926 6630</p>
+          <p>Miền Nam: 086 926 6631</p>
+          <p>Hà Nội: Tầng 4, The Sun, Mễ Trì Hạ</p>
+          <p>Đà Nẵng: Tầng 6, 30/4, Hòa Cường</p>
+          <p>Hồ Chí Minh: 171 Nguyễn Thị Nhung, Hiệp Bình, Thủ Đức</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Initialize fade-in animation
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(el);
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.querySelector('.btn-submit');
+      const originalText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Đang gửi...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Đã gửi thành công!';
+        submitBtn.style.background = '#28a745';
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '#f15a24';
+          submitBtn.disabled = false;
+          this.reset();
+        }, 3000);
+      }, 2000);
+    });
+
+    // Add smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

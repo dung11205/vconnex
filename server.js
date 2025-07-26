@@ -1,6 +1,5 @@
-// server.js
+
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
 const session = require('express-session');
@@ -26,14 +25,14 @@ app.use(session({
   secret: 'vconnex_secret_key',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 3600000 } // 1 hour
+  cookie: { maxAge: 3600000 } 
 }));
  app.get('/solutions', (req, res) => {
   res.render('solutions');
 });
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
+(require('mongoose')).connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB error:', err);
@@ -46,10 +45,12 @@ const apiProductRoutes = require('./routes/product.api');
 const consultationRoutes = require('./routes/consultation.routes');
 const adminRoutes = require('./routes/admin.routes');
 const featuredRoutes = require('./routes/featured.routes');
+const supportRoutes = require('./routes/support.routes');
 app.use('/products', productRoutes);           
 app.use('/api/products', apiProductRoutes);    
 app.use('/consultation', consultationRoutes);
 app.use('/featured', featuredRoutes);
+app.use('/support', supportRoutes);
 app.use('/admin', adminRoutes);
 app.use(express.static('public'));
 
