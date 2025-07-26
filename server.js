@@ -1,4 +1,3 @@
-
 const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
@@ -27,9 +26,6 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 3600000 } 
 }));
- app.get('/solutions', (req, res) => {
-  res.render('solutions');
-});
 
 // MongoDB Connection
 (require('mongoose')).connect(process.env.MONGODB_URI)
@@ -46,18 +42,23 @@ const consultationRoutes = require('./routes/consultation.routes');
 const adminRoutes = require('./routes/admin.routes');
 const featuredRoutes = require('./routes/featured.routes');
 const supportRoutes = require('./routes/support.routes');
+
 app.use('/products', productRoutes);           
 app.use('/api/products', apiProductRoutes);    
 app.use('/consultation', consultationRoutes);
 app.use('/featured', featuredRoutes);
-app.use('/support', supportRoutes);
+app.use('/support', supportRoutes); // ✅ Đã có route cho trang hỗ trợ
 app.use('/admin', adminRoutes);
 app.use(express.static('public'));
-
 
 // Trang chủ
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+// Trang giải pháp
+app.get('/solutions', (req, res) => {
+  res.render('solutions');
 });
 
 // 404 fallback
