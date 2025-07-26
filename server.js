@@ -42,12 +42,14 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 const productRoutes = require('./routes/product.routes');
-const apiProductRoutes = require('./routes/product.api'); // ✅ JSON API
+const apiProductRoutes = require('./routes/product.api'); 
 const consultationRoutes = require('./routes/consultation.routes');
 const adminRoutes = require('./routes/admin.routes');
-app.use('/products', productRoutes);           // Render EJS
-app.use('/api/products', apiProductRoutes);    // Trả JSON cho fetch
+const featuredRoutes = require('./routes/featured.routes');
+app.use('/products', productRoutes);           
+app.use('/api/products', apiProductRoutes);    
 app.use('/consultation', consultationRoutes);
+app.use('/featured', featuredRoutes);
 app.use('/admin', adminRoutes);
 app.use(express.static('public'));
 

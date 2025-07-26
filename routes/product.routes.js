@@ -8,8 +8,8 @@ const products = [
     "image": "/images/Anh-san-pham-ai-camera-hub-v2-canh-trai-2.webp",
     "images": [
       "/images/Anh-san-pham-ai-camera-hub-v2-canh-trai-2.webp",
-      "/images/Anh-san-pham-ai-camera-hub-v2-canh-sau.webp",
-      "/images/Anh-san-pham-ai-camera-hub-v2-tong-quan.webp"
+      "/images/Anh-san-pham-ai-camera-hub-v2-canh-phai-2 (1).webp",
+      "/images/Anh-san-pham-ai-camera-hub-v2-chinh-dien-2 (1).webp"
     ],
     "category": "Camera thông minh",
     "description": "AI Camera Hub V2 là thiết bị giám sát thông minh với công nghệ AI tiên tiến, hỗ trợ kết nối đa camera.",
@@ -33,8 +33,8 @@ const products = [
     "image": "/images/bo-dieu-khien-cong-thong-minh-vconnex.webp",
     "images": [
       "/images/bo-dieu-khien-cong-thong-minh-vconnex.webp",
-      "/images/bo-dieu-khien-cong-thong-minh-phu-kien.webp",
-      "/images/bo-dieu-khien-cong-thong-minh-cai-dat.webp"
+      "/images/Anh-san-pham-Bo-dieu-khien-cua-cong-4-1.jpg",
+      "/images/vo-hop-dong-co-cong.jpg"
     ],
     "category": "Cổng - cửa thông minh",
     "description": "Bộ điều khiển cửa cổng thông minh, cho phép điều khiển từ xa qua ứng dụng di động.",
@@ -57,8 +57,8 @@ const products = [
     "image": "/images/bo-dieu-khien-cua-cuon-thong-minh-vconnex.webp",
     "images": [
       "/images/bo-dieu-khien-cua-cuon-thong-minh-vconnex.webp",
-      "/images/bo-dieu-khien-cua-cuon-phu-kien.webp",
-      "/images/bo-dieu-khien-cua-cuon-cai-dat.webp"
+      "/images/anh-bo-dieu-khien-cua-cuon-ava4.jpg",
+      "/images/anh-bo-dieu-khien-cua-cuon-ava5.jpg"
     ],
     "category": "Cổng - cửa thông minh",
     "description": "Bộ điều khiển cửa cuốn thông minh, tích hợp công nghệ điều khiển từ xa và an toàn.",
@@ -81,8 +81,8 @@ const products = [
     "image": "/images/cam-bien-hien-dien-300x300px.jpg",
     "images": [
       "/images/cam-bien-hien-dien-300x300px.jpg",
-      "/images/cam-bien-hien-dien-cai-dat.webp",
-      "/images/cam-bien-hien-dien-tinh-nang.webp"
+      "/images/cam-bien-hien-dien-vconnex-3 (1).png",
+      "/images/cam-bien-hien-dien-vconnex-5.png"
     ],
     "category": "Cảm biến",
     "description": "Cảm biến hiện diện thông minh, phát hiện chuyển động với độ chính xác cao.",
@@ -105,8 +105,8 @@ const products = [
     "image": "/images/o-cam-thong-minh-chong-giat.webp",
     "images": [
       "/images/o-cam-thong-minh-chong-giat.webp",
-      "/images/o-cam-thong-minh-chong-giat-phu-kien.webp",
-      "/images/o-cam-thong-minh-chong-giat-su-dung.webp"
+      "/images/o-cam-thong-minh-Vconnex-5QVvo0.webp",
+      "/images/o-cam-do-dien-nang-thong-minh-Vconnex-28g8NF.webp"
     ],
     "category": "Ổ cắm thông minh",
     "description": "Ổ cắm thông minh chống giật, đảm bảo an toàn điện gia dụng.",
@@ -129,8 +129,8 @@ const products = [
     "image": "/images/USB-Converter.webp",
     "images": [
       "/images/USB-Converter.webp",
-      "/images/USB-Converter-cai-dat.webp",
-      "/images/USB-Converter-tinh-nang.webp"
+      "/images/USB-Converter-Vconnex-Smarthome-2.webp",
+      "/images/USB-Converter-Vconnex-Smarthome-4.webp"
     ],
     "category": "Khác",
     "description": "USB Converter đa năng, hỗ trợ chuyển đổi cổng kết nối hiệu quả.",
@@ -153,8 +153,8 @@ const products = [
     "image": "/images/dong-co-rem-thong-minh.webp",
     "images": [
       "/images/dong-co-rem-thong-minh.webp",
-      "/images/dong-co-rem-thong-minh-phu-kien.webp",
-      "/images/dong-co-rem-thong-minh-cai-dat.webp"
+      "/images/dong-co-rem-thong-minh.webp",
+      "/images/dong-co-rem-thong-minh.webp"
     ],
     "category": "Rèm thông minh",
     "description": "Động cơ rèm thông minh, điều khiển rèm tự động qua ứng dụng.",
@@ -177,8 +177,8 @@ const products = [
     "image": "/images/khoa-thong-minh-danh-cho-cua-nhom.webp",
     "images": [
       "/images/khoa-thong-minh-danh-cho-cua-nhom.webp",
-      "/images/khoa-thong-minh-cua-nhom-phu-kien.webp",
-      "/images/khoa-thong-minh-cua-nhom-cai-dat.webp"
+      "/images/kich-thuoc-khoa-thong-minh-cua-nhom.jpg",
+      "/images/anh-san-pham-khoa-cua-nhom-3.jpg"
     ],
     "category": "Khóa cửa thông minh",
     "description": "Khóa thông minh dành cho cửa nhôm, an toàn và tiện lợi.",
@@ -201,8 +201,8 @@ const products = [
     "image": "/images/AI-Camera-Hub.webp",
     "images": [
       "/images/AI-Camera-Hub.webp",
-      "/images/AI-Camera-Hub-canh-sau.webp",
-      "/images/AI-Camera-Hub-tong-quan.webp"
+      "/images/AI-camera-hub-6.png",
+      "/images/AI-camera-hub-1.png"
     ],
     "category": "Camera thông minh",
     "description": "AI Camera Hub với tính năng giám sát thông minh và độ phân giải cao.",
@@ -225,8 +225,8 @@ const products = [
     "image": "/images/bo-dieu-khien-hong-ngoai.webp",
     "images": [
       "/images/bo-dieu-khien-hong-ngoai.webp",
-      "/images/bo-dieu-khien-hong-ngoai-phu-kien.webp",
-      "/images/bo-dieu-khien-hong-ngoai-cai-dat.webp"
+      "/images/bo-dieu-khien-hong-ngoai.webp",
+      "/images/bo-dieu-khien-hong-ngoai.webp"
     ],
     "category": "Điều khiển hồng ngoại",
     "description": "Bộ điều khiển hồng ngoại thông minh, thay thế remote truyền thống.",
@@ -249,8 +249,8 @@ const products = [
     "image": "/images/cam-bien-chuyen-dong.webp",
     "images": [
       "/images/cam-bien-chuyen-dong.webp",
-      "/images/cam-bien-chuyen-dong-cai-dat.webp",
-      "/images/cam-bien-chuyen-dong-tinh-nang.webp"
+      "/images/DSC06872.jpg",
+      "/images/DSC06861.jpg"
     ],
     "category": "Cảm biến",
     "description": "Cảm biến chuyển động thông minh, kích hoạt đèn hoặc thiết bị tự động.",
@@ -273,8 +273,8 @@ const products = [
     "image": "/images/cam-bien-cua-thong-minh.webp",
     "images": [
       "/images/cam-bien-cua-thong-minh.webp",
-      "/images/cam-bien-cua-cai-dat.webp",
-      "/images/cam-bien-cua-tinh-nang.webp"
+      "/images/anh-san-pham-cam-bien-cua-5.jpg",
+      "/images/anh-san-pham-cam-bien-cua-2.jpg"
     ],
     "category": "Cảm biến",
     "description": "Cảm biến cửa thông minh, phát hiện trạng thái mở/đóng cửa.",
@@ -297,8 +297,8 @@ const products = [
     "image": "/images/cong-tac-cua-cuon-thong-minh.webp",
     "images": [
       "/images/cong-tac-cua-cuon-thong-minh.webp",
-      "/images/cong-tac-cua-cuon-phu-kien.webp",
-      "/images/cong-tac-cua-cuon-cai-dat.webp"
+      "/images/cong-tac-rem-thong-minh-vconnex-1.jpg",
+      "/images/cong-tac-rem-thong-minh-vconnex-2.jpg"
     ],
     "category": "Cổng - cửa thông minh",
     "description": "Công tắc thông minh cho cửa cuốn và cổng, điều khiển dễ dàng.",
@@ -321,8 +321,8 @@ const products = [
     "image": "/images/cong-tac-khong-day-thong-minh.webp",
     "images": [
       "/images/cong-tac-khong-day-thong-minh.webp",
-      "/images/cong-tac-khong-day-phu-kien.webp",
-      "/images/cong-tac-khong-day-cai-dat.webp"
+      "/images/cong-tac-khong-day-vconnex-2.jpg",
+      "/images/cong-tac-khong-day-vconnex-3.jpg"
     ],
     "category": "Công tắc thông minh",
     "description": "Công tắc không dây thông minh, không cần đi dây điện.",
@@ -345,8 +345,8 @@ const products = [
     "image": "/images/cong-tac-rem-thong-minh.webp",
     "images": [
       "/images/cong-tac-rem-thong-minh.webp",
-      "/images/cong-tac-rem-phu-kien.webp",
-      "/images/cong-tac-rem-cai-dat.webp"
+      "/images/Cong-tac-rem-thong-minh-4dM7gA.webp",
+      "/images/Cong-tac-rem-thong-minhkV37c.webp"
     ],
     "category": "Công tắc thông minh",
     "description": "Công tắc rèm thông minh, điều khiển rèm tự động.",
@@ -369,8 +369,8 @@ const products = [
     "image": "/images/cong-tac-binh-nuoc-nong-thong-minh.webp",
     "images": [
       "/images/cong-tac-binh-nuoc-nong-thong-minh.webp",
-      "/images/cong-tac-binh-nuoc-nong-phu-kien.webp",
-      "/images/cong-tac-binh-nuoc-nong-cai-dat.webp"
+      "/images/cong-tac-binh-nuoc-nong-thong-minh.webp",
+      "/images/cong-tac-binh-nuoc-nong-thong-minh.webp"
     ],
     "category": "Công tắc thông minh",
     "description": "Công tắc thông minh cho bình nước nóng, tiết kiệm năng lượng.",
@@ -393,8 +393,8 @@ const products = [
     "image": "/images/bo-dieu-khien-trung-tam.webp",
     "images": [
       "/images/bo-dieu-khien-trung-tam.webp",
-      "/images/bo-dieu-khien-trung-tam-phu-kien.webp",
-      "/images/bo-dieu-khien-trung-tam-cai-dat.webp"
+      "/images/bo-dieu-khien-trung-tam.webp",
+      "/images/bo-dieu-khien-trung-tam.webp"
     ],
     "category": "Điều khiển trung tâm",
     "description": "Bộ điều khiển trung tâm, quản lý toàn bộ hệ thống nhà thông minh.",
@@ -417,8 +417,8 @@ const products = [
     "image": "/images/khoa-thong-minh-danh-cho-cua-go.webp",
     "images": [
       "/images/khoa-thong-minh-danh-cho-cua-go.webp",
-      "/images/khoa-thong-minh-cua-go-phu-kien.webp",
-      "/images/khoa-thong-minh-cua-go-cai-dat.webp"
+      "/images/khoa-dien-tu-thong-minh-product3.jpg",
+      "/images/khoa-dien-tu-thong-minh-product4.jpg"
     ],
     "category": "Khóa cửa thông minh",
     "description": "Khóa thông minh dành cho cửa gỗ, an toàn và hiện đại.",
@@ -441,8 +441,8 @@ const products = [
     "image": "/images/cam-bien-khoi-thong-minh.webp",
     "images": [
       "/images/cam-bien-khoi-thong-minh.webp",
-      "/images/cam-bien-khoi-cai-dat.webp",
-      "/images/cam-bien-khoi-tinh-nang.webp"
+      "/images/Cam-bien-khoi-Bluetooth-Mesh-Vconnex_1.webp",
+      "/images/cam-bien-khoi-vconnex-2.png"
     ],
     "category": "Cảm biến",
     "description": "Cảm biến khói thông minh, cảnh báo sớm nguy cơ cháy nổ.",
@@ -465,8 +465,8 @@ const products = [
     "image": "/images/camera-thong-minh.webp",
     "images": [
       "/images/camera-thong-minh.webp",
-      "/images/camera-thong-minh-canh-sau.webp",
-      "/images/camera-thong-minh-cai-dat.webp"
+      "/images/camera-ai-thong-minh-vconnex-1.jpg",
+      "/images/camera-ai-thong-minh-vconnex-2.jpg"
     ],
     "category": "Camera thông minh",
     "description": "Camera thông minh với độ phân giải cao, hỗ trợ giám sát từ xa.",
@@ -489,8 +489,8 @@ const products = [
     "image": "/images/cong-to-thong-minh.webp",
     "images": [
       "/images/cong-to-thong-minh.webp",
-      "/images/cong-to-thong-minh-phu-kien.webp",
-      "/images/cong-to-thong-minh-cai-dat.webp"
+      "/images/cong-to-thong-minh.webp",
+      "/images/cong-to-thong-minh.webp"
     ],
     "category": "Công tơ thông minh",
     "description": "Công tơ điện thông minh, theo dõi mức tiêu thụ điện năng.",
@@ -513,8 +513,8 @@ const products = [
     "image": "/images/cong-tac-thong-minh.webp",
     "images": [
       "/images/cong-tac-thong-minh.webp",
-      "/images/cong-tac-thong-minh-phu-kien.webp",
-      "/images/cong-tac-thong-minh-cai-dat.webp"
+      "/images/cong-tac-thong-minh.webp",
+      "/images/cong-tac-thong-minh.webp"
     ],
     "category": "Công tắc thông minh",
     "description": "Công tắc thông minh, điều khiển thiết bị từ xa qua ứng dụng.",
