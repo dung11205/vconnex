@@ -345,10 +345,10 @@
     </div>
 
             <% if (success) { %>
-              <div class="alert alert-success">✔️ Gửi thành công!</div>
+              <div class="alert alert-success"> Gửi thành công!</div>
             <% } %>
             <% if (error) { %>
-              <div class="alert alert-danger">❌ Có lỗi xảy ra, vui lòng thử lại!</div>
+              <div class="alert alert-danger"> Có lỗi xảy ra, vui lòng thử lại!</div>
             <% } %>
 
 
@@ -537,7 +537,7 @@ document.querySelector('form').addEventListener('submit', async function(e) {
       btn.style.background = '#28a745';
     }
   } catch (err) {
-    alert('❌ Lỗi khi gửi, vui lòng thử lại!');
+    alert(' Lỗi khi gửi, vui lòng thử lại!');
     btn.innerHTML = 'Gửi ngay';
     btn.disabled = false;
   }

@@ -6,13 +6,22 @@ const Consultation = require('../models/consultation.model');
 // POST /consultation
 router.post('/', async (req, res) => {
   try {
-    const { name, phone, solution, message } = req.body; // ✅ Thêm message vào đây
+    const { name, phone, solution, message, email, location } = req.body;
 
-    if (!name || !phone || !solution) {
-      return res.status(400).json({ success: false, message: "Thiếu thông tin" });
+    // Kiểm tra tất cả các trường bắt buộc
+    if (!name || !phone || !solution || !email || !location) {
+      return res.status(400).json({ success: false, message: "Thiếu thông tin bắt buộc" });
     }
 
-    const newConsultation = new Consultation({ name, phone, solution, message }); // ✅ Giờ message đã được khai báo
+    const newConsultation = new Consultation({
+      name,
+      phone,
+      solution,
+      message,
+      email,
+      location
+    });
+
     await newConsultation.save();
 
     res.status(200).json({ success: true });
@@ -21,5 +30,5 @@ router.post('/', async (req, res) => {
     res.status(500).json({ success: false, message: "Lỗi server" });
   }
 });
-
+  
 module.exports = router;

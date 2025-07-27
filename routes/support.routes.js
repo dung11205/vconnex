@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
 
 router.post('/send', async (req, res) => {
   const { name, city, phone, email, message, solution } = req.body;
-  console.log('[📥 Body nhận]', req.body);
+  console.log('[ Body nhận]', req.body);
 
   if (!name || !city || !phone || !email || !solution) {
-    console.error('[⚠️ Thiếu dữ liệu bắt buộc]');
+    console.error('[ Thiếu dữ liệu bắt buộc]');
     return res.redirect('/support?error=1');
   }
 
@@ -29,11 +29,11 @@ router.post('/send', async (req, res) => {
       status: 'pending'
     });
 
-    console.log('✅ Đã lưu thành công');
+    console.log(' Đã lưu thành công');
     // Gửi lại với query success=1 để hiển thị thông báo
     res.redirect('/support?success=1');
   } catch (err) {
-    console.error('❌ Lỗi khi lưu MongoDB:', err);
+    console.error(' Lỗi khi lưu MongoDB:', err);
     res.redirect('/support?error=1');
   }
 });

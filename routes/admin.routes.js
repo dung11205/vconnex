@@ -33,10 +33,10 @@ function requireLogin(req, res, next) {
 router.get('/', requireLogin, async (req, res) => {
   try {
     const consultations = await Consultation.find({ status: 'pending' }).sort({ createdAt: -1 });
-    console.log('[📋 Dữ liệu chờ tư vấn]', consultations);
+    console.log('[ Dữ liệu chờ tư vấn]', consultations);
     res.render('admin', { consultations });
   } catch (err) {
-    console.error('❌ Lỗi khi load admin:', err);
+    console.error(' Lỗi khi load admin:', err);
     res.status(500).send('Lỗi khi tải danh sách tư vấn.');
   }
 });
@@ -51,7 +51,7 @@ router.post('/mark-done/:id', requireLogin, async (req, res) => {
     await Consultation.findByIdAndUpdate(req.params.id, { status: 'done' });
     res.redirect('/admin');
   } catch (err) {
-    console.error('❌ Lỗi khi đánh dấu đã tư vấn:', err);
+    console.error(' Lỗi khi đánh dấu đã tư vấn:', err);
     res.status(500).send('Có lỗi xảy ra khi cập nhật trạng thái.');
   }
 });
@@ -62,7 +62,7 @@ router.post('/delete/:id', requireLogin, async (req, res) => {
     await Consultation.findByIdAndDelete(req.params.id);
     res.redirect('/admin');
   } catch (err) {
-    console.error('❌ Lỗi khi xóa bản ghi:', err);
+    console.error(' Lỗi khi xóa bản ghi:', err);
     res.status(500).send('Có lỗi xảy ra khi xóa bản ghi.');
   }
 });
@@ -73,7 +73,7 @@ router.get('/done', requireLogin, async (req, res) => {
     const consultations = await Consultation.find({ status: 'done' }).sort({ updatedAt: -1 });
     res.render('admin-done', { consultations });
   } catch (err) {
-    console.error('❌ Lỗi khi tải danh sách đã tư vấn:', err);
+    console.error(' Lỗi khi tải danh sách đã tư vấn:', err);
     res.status(500).send('Lỗi khi tải danh sách đã tư vấn.');
   }
 });

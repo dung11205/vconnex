@@ -389,6 +389,15 @@
             <input type="tel" class="form-control" id="phone" required>
           </div>
           <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="location" class="form-label">Tỉnh/Thành phố</label>
+                <input type="text" class="form-control" id="location" required>
+              </div>
+          <div class="mb-3">
             <label for="message" class="form-label">Ghi chú</label>
             <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ghi chú thêm (nếu có)..."></textarea>
           </div>
@@ -481,7 +490,9 @@
     const formData = {
       name: document.getElementById('name').value.trim(),
       phone: document.getElementById('phone').value.trim(),
-      solution: document.getElementById('solution').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      location: document.getElementById('location').value.trim(),
+      solution: [document.getElementById('solution').value.trim()],
       message: document.getElementById('message').value.trim()
     };
 
@@ -504,6 +515,7 @@
     }
   });
 </script>
+
 
 
 </body>
