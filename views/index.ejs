@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <title>Vconnex - Giới thiệu</title>
@@ -77,21 +78,25 @@
         transform: translateY(30px);
         opacity: 0;
       }
+
       to {
         transform: translateY(0);
         opacity: 1;
       }
     }
 
-    button, a.btn {
+    button,
+    a.btn {
       cursor: pointer;
     }
-        footer {
+
+    footer {
       background: #0d1a3a;
       color: #fff;
       padding: 40px 0;
       font-size: 15px;
     }
+
     footer h6 {
       font-size: 16px;
       font-weight: bold;
@@ -100,412 +105,715 @@
       padding-left: 10px;
       margin-bottom: 20px;
     }
+
     footer ul {
       list-style: none;
       padding: 0;
     }
+
     footer ul li {
       margin-bottom: 8px;
     }
+
     footer ul li a {
       color: #cfd8e1;
       text-decoration: none;
     }
+
     footer img {
       max-width: 120px;
       margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
 
-  <!-- Banner Carousel -->
-  <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/images/Top-banner-website.webp" class="d-block w-100" alt="Banner 1">
-      </div>
-      <div class="carousel-item">
-        <img src="/images/top-1-san-pham-duoc-nguoi-dung-ye-thich.jpg" class="d-block w-100" alt="Banner 2">
-      </div>
-      <div class="carousel-item">
-        <img src="/images/nen-tang-iot-thuc-chien.webp" class="d-block w-100" alt="Banner 3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-
-  <!-- Giải pháp nhà thông minh -->
-  <section class="container my-5">
-    <div class="row">
-      <!-- Danh sách giải pháp -->
-      <div class="col-md-4 mb-4">
-        <div class="d-grid gap-3" id="solutionButtons">
-          <button class="btn btn-primary text-start fw-semibold py-3"
-            data-title="Nhà thông minh toàn diện"
-            data-desc="Smart Home như một quản gia toàn năng giúp bạn giám sát, điều khiển từ xa, thiết lập kịch bản tự động cho hệ thống điện và đồ điện trong nhà bạn."
-            data-img="/images/giai-phap-nha-thong-minh-toan-dien.webp">
-            <i class="bi bi-house-door me-2"></i> Nhà thông minh toàn diện
-          </button>
-          <button class="btn btn-light text-start fw-semibold py-3 border"
-            data-title="An ninh thông minh"
-            data-desc="Giải pháp giám sát an ninh với cảm biến, camera, hệ thống cảnh báo giúp phát hiện sớm các tình huống bất thường."
-            data-img="/images/Giai-phap-an-ninh-thong-minh.webp">
-            <i class="bi bi-shield-lock me-2 text-secondary"></i> An ninh thông minh
-          </button>
-          <button class="btn btn-light text-start fw-semibold py-3 border"
-            data-title="An toàn điện thông minh"
-            data-desc="Bảo vệ hệ thống điện nhờ cảm biến rò rỉ, quá tải, và khả năng tự ngắt điện để đảm bảo an toàn."
-            data-img="/images/giai-phap-an-toan-dien-thong-minh.webp">
-            <i class="bi bi-lightning me-2 text-secondary"></i> An toàn điện thông minh
-          </button>
-          <button class="btn btn-light text-start fw-semibold py-3 border"
-            data-title="Tiết kiệm năng lượng"
-            data-desc="Tối ưu hóa tiêu thụ năng lượng nhờ tự động hóa và giám sát điện năng trong thời gian thực."
-            data-img="/images/Giai-phap-tiet-kiem-nang-luong-thong-minh.webp">
-            <i class="bi bi-battery-half me-2 text-secondary"></i> Tiết kiệm năng lượng
-          </button>
-          <button class="btn btn-light text-start fw-semibold py-3 border"
-            data-title="Phòng cháy thông minh"
-            data-desc="Cảm biến khói, gas và nhiệt độ giúp phát hiện cháy, cảnh báo và ngắt điện kịp thời."
-            data-img="/images/Giai-phap-phong-chay-thong-minh.webp">
-            <i class="bi bi-fire me-2 text-secondary"></i> Phòng cháy thông minh
-          </button>
-          <button class="btn btn-light text-start fw-semibold py-3 border"
-            data-title="Chiếu sáng thông minh"
-            data-desc="Hệ thống đèn tự động bật/tắt dựa trên cảm biến chuyển động và ánh sáng tự nhiên."
-            data-img="/images/giai-phap-chieu-sang-thong-minh.webp">
-            <i class="bi bi-lightbulb me-2 text-secondary"></i> Chiếu sáng thông minh
-          </button>
+    <!-- Banner Carousel -->
+    <header>
+      <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner ratio ratio-21x9">
+          <div class="carousel-item active">
+            <img src="images/1.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="images/2.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="images/3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
       </div>
+    </header>
 
-      <!-- Hình ảnh & mô tả -->
-      <div class="col-md-8">
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-          <img id="solutionImage" src="/images/giai-phap-nha-thong-minh-toan-dien.webp" alt="Giải pháp nhà thông minh" class="img-fluid">
-          <div class="p-4 bg-light">
-            <h5 id="solutionTitle" class="fw-bold mb-2">Nhà thông minh toàn diện</h5>
-            <p id="solutionDesc">
-              Smart Home như một quản gia toàn năng giúp bạn giám sát, điều khiển từ xa, thiết lập kịch bản tự động cho hệ thống điện và đồ điện trong nhà bạn.
-            </p>
-            <a href="#" class="text-danger fw-semibold text-decoration-none">Xem thêm &rarr;</a>
+
+    <section id="awards" class="position-relative" style="margin-top: -54px; z-index: 2;">
+      <div class="container">
+        <div class="awards-box rounded shadow-lg p-4 position-relative mx-auto"
+          style="border-radius: 100px; max-width: 1000px;">
+          <div class="d-flex overflow-auto awards-scroll snap-x scroll-smooth justify-content-start align-items-center">
+            <img src="images/Giai-thuong-Tech-Awards-2022.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 1" draggable="false">
+            <img src="images/Giai-thuong-Tech-Awards-2023.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 2" draggable="false">
+            <img src="images/Giai-thuong-Sao-Khue-2020-2024.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 3" draggable="false">
+            <img src="images/Giai-thuong-Smart-City.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 4" draggable="false">
+            <img src="images/Giai-thuong-Vietnam-Top-10.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 5" draggable="false">
+            <img src="images/Giai-thuong-Make-in-Vietnam.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 6" draggable="false">
+            <img src="images/Giai-thuong-Tech-Awards-2022.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 1" draggable="false">
+            <img src="images/Giai-thuong-Tech-Awards-2023.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 2" draggable="false">
+            <img src="images/Giai-thuong-Sao-Khue-2020-2024.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 3" draggable="false">
+            <img src="images/Giai-thuong-Smart-City.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 4" draggable="false">
+            <img src="images/Giai-thuong-Vietnam-Top-10.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 5" draggable="false">
+            <img src="images/Giai-thuong-Make-in-Vietnam.png" class="me-4" style="height: 55px; flex-shrink: 0;"
+              alt="Award 6" draggable="false">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giải pháp nhà thông minh -->
+    <section class="container my-5">
+      <div class="row">
+        <!-- Danh sách giải pháp -->
+        <div class="col-md-4 mb-4">
+          <div class="d-grid gap-3" id="solutionButtons">
+            <button class="btn btn-primary text-start fw-semibold py-3" data-title="Nhà thông minh toàn diện"
+              data-desc="Smart Home như một quản gia toàn năng giúp bạn giám sát, điều khiển từ xa, thiết lập kịch bản tự động cho hệ thống điện và đồ điện trong nhà bạn."
+              data-img="/images/giai-phap-nha-thong-minh-toan-dien.webp">
+              <i class="bi bi-house-door me-2"></i> Nhà thông minh toàn diện
+            </button>
+            <button class="btn btn-light text-start fw-semibold py-3 border" data-title="An ninh thông minh"
+              data-desc="Giải pháp giám sát an ninh với cảm biến, camera, hệ thống cảnh báo giúp phát hiện sớm các tình huống bất thường."
+              data-img="/images/Giai-phap-an-ninh-thong-minh.webp">
+              <i class="bi bi-shield-lock me-2 text-secondary"></i> An ninh thông minh
+            </button>
+            <button class="btn btn-light text-start fw-semibold py-3 border" data-title="An toàn điện thông minh"
+              data-desc="Bảo vệ hệ thống điện nhờ cảm biến rò rỉ, quá tải, và khả năng tự ngắt điện để đảm bảo an toàn."
+              data-img="/images/giai-phap-an-toan-dien-thong-minh.webp">
+              <i class="bi bi-lightning me-2 text-secondary"></i> An toàn điện thông minh
+            </button>
+            <button class="btn btn-light text-start fw-semibold py-3 border" data-title="Tiết kiệm năng lượng"
+              data-desc="Tối ưu hóa tiêu thụ năng lượng nhờ tự động hóa và giám sát điện năng trong thời gian thực."
+              data-img="/images/Giai-phap-tiet-kiem-nang-luong-thong-minh.webp">
+              <i class="bi bi-battery-half me-2 text-secondary"></i> Tiết kiệm năng lượng
+            </button>
+            <button class="btn btn-light text-start fw-semibold py-3 border" data-title="Phòng cháy thông minh"
+              data-desc="Cảm biến khói, gas và nhiệt độ giúp phát hiện cháy, cảnh báo và ngắt điện kịp thời."
+              data-img="/images/Giai-phap-phong-chay-thong-minh.webp">
+              <i class="bi bi-fire me-2 text-secondary"></i> Phòng cháy thông minh
+            </button>
+            <button class="btn btn-light text-start fw-semibold py-3 border" data-title="Chiếu sáng thông minh"
+              data-desc="Hệ thống đèn tự động bật/tắt dựa trên cảm biến chuyển động và ánh sáng tự nhiên."
+              data-img="/images/giai-phap-chieu-sang-thong-minh.webp">
+              <i class="bi bi-lightbulb me-2 text-secondary"></i> Chiếu sáng thông minh
+            </button>
+          </div>
+        </div>
+
+        <!-- Hình ảnh & mô tả -->
+        <div class="col-md-8">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <img id="solutionImage" src="/images/giai-phap-nha-thong-minh-toan-dien.webp" alt="Giải pháp nhà thông minh"
+              class="img-fluid">
+            <div class="p-4 bg-light">
+              <h5 id="solutionTitle" class="fw-bold mb-2">Nhà thông minh toàn diện</h5>
+              <p id="solutionDesc">
+                Smart Home như một quản gia toàn năng giúp bạn giám sát, điều khiển từ xa, thiết lập kịch bản tự động
+                cho hệ thống điện và đồ điện trong nhà bạn.
+              </p>
+              <a href="#" class="text-danger fw-semibold text-decoration-none">Xem thêm &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hệ sinh thái Vconnex -->
+    <section class="container py-5">
+      <h2 class="text-center text-uppercase fw-bold mb-3 text-primary">Hệ sinh thái Vconnex</h2>
+      <p class="text-center mb-5">
+        Hệ sinh thái Nhà thông minh Vconnex không ngừng mở rộng và phát triển với mục tiêu mang đến những giải pháp
+        thiết thực nhất cho mọi gia đình, nổi bật lên trên thị trường với các đặc tính khác biệt: An ninh – An toàn –
+        Tiết kiệm.
+      </p>
+      <p class="text-center mb-5">
+        Mỗi sản phẩm Vconnex Smart Home là một thiết bị IoT hoàn thiện khi có giao thức truyền thông linh hoạt; ứng dụng
+        công nghệ edge computing; over the air...và hoạt động trên nền tảng Internet of Things theo tiêu chuẩn quốc tế.
+        Các thiết bị này hoàn toàn có thể hoạt động độc lập cũng như sẵn sàng gia nhập hệ thống lớn, đạt độ bảo mật cao.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Sản phẩm 1 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-cong-tac-thong-minh.webp" class="img-fluid w-100" alt="Công tắc thông minh">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+        <!-- Sản phẩm 2 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-khoa-cua-thong-minh.webp" class="img-fluid w-100" alt="Khóa cửa thông minh">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+        <!-- Sản phẩm 3 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-cong-to-dien-thong-minh.webp" class="img-fluid w-100" alt="Công tơ thông minh">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+        <!-- Sản phẩm 4 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-camera-thong-minh.webp" class="img-fluid w-100" alt="Camera thông minh">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+        <!-- Sản phẩm 5 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-cam-bien-khoi-thong-minh.webp" class="img-fluid w-100"
+              alt="Cảm biến khói thông minh">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+        <!-- Sản phẩm 6 -->
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="position-relative rounded overflow-hidden shadow-sm">
+            <img src="/images/san-pham-dieu-khien-trung-tam.webp" class="img-fluid w-100" alt="Điều khiển trung tâm">
+            <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- JS xử lý nút giải pháp -->
+    <script>
+      const buttons = document.querySelectorAll('#solutionButtons button');
+      const image = document.getElementById('solutionImage');
+      const title = document.getElementById('solutionTitle');
+      const desc = document.getElementById('solutionDesc');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-light', 'border');
+            const icon = b.querySelector('i');
+            if (icon) icon.classList.add('text-secondary');
+          });
+
+          btn.classList.remove('btn-light', 'border');
+          btn.classList.add('btn-primary');
+          const icon = btn.querySelector('i');
+          if (icon) icon.classList.remove('text-secondary');
+
+          image.src = btn.getAttribute('data-img');
+          title.textContent = btn.getAttribute('data-title');
+          desc.textContent = btn.getAttribute('data-desc');
+        });
+      });
+    </script>
+    <section class="container my-5">
+      <h2 class="text-center text-uppercase fw-bold text-primary mb-3">Gói giải pháp<br>NHÀ THÔNG MINH VCONNEX MẪU</h2>
+      <p class="text-center mb-4">
+        Chúng tôi gợi ý gói giải pháp Nhà thông minh Vconnex cho các loại nhà phổ biến như chung cư 2–3 phòng ngủ; nhà
+        phố; biệt thự…<br>
+        Bạn cũng có thể tự thiết kế gói giải pháp cho nhà của mình hoặc để chuyên gia Smart Home tư vấn giúp bạn nhé!
+      </p>
+      <p class="text-center">
+        <a href="#" class="fw-semibold text-danger text-decoration-none">Tư vấn gói theo nhu cầu &rarr;</a>
+      </p>
+
+      <div class="row mt-4 g-4 justify-content-center">
+        <!-- Căn hộ chung cư -->
+        <div class="col-md-4 d-flex">
+          <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <h5 class="fw-bold text-primary mb-3">Căn hộ chung cư</h5>
+              <ul class="list-unstyled mb-4">
+                <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
+                <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
+                <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
+                <li><i class="bi bi-phone me-2"></i>An ninh thông minh</li>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
+              <span class="text-primary fw-bold">Giá chỉ từ<br>15.000.000 VNĐ</span>
+              <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nhà mái & Nhà tầng -->
+        <div class="col-md-4 d-flex">
+          <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <h5 class="fw-bold text-primary mb-3">Nhà mái & Nhà tầng</h5>
+              <ul class="list-unstyled mb-4">
+                <li><i class="bi bi-door-open-fill me-2"></i>Cổng/cửa cuốn thông minh</li>
+                <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
+                <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
+                <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
+                <li><i class="bi bi-fire me-2"></i>Phòng cháy thông minh</li>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
+              <span class="text-primary fw-bold">Giá chỉ từ<br>25.000.000 VNĐ</span>
+              <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biệt thự -->
+        <div class="col-md-4 d-flex">
+          <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <h5 class="fw-bold text-primary mb-3">Biệt thự</h5>
+              <ul class="list-unstyled mb-4">
+                <li><i class="bi bi-key-fill me-2"></i>Khóa cửa thông minh</li>
+                <li><i class="bi bi-door-open-fill me-2"></i>Cổng/cửa cuốn thông minh</li>
+                <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
+                <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
+                <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
+                <li><i class="bi bi-fire me-2"></i>Phòng cháy thông minh</li>
+                <li><i class="bi bi-columns-gap me-2"></i>Rèm thông minh</li>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
+              <span class="text-primary fw-bold">Giá chỉ từ<br>40.000.000 VNĐ</span>
+              <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     <section id="team" class="partners-section py-5">
+    <div class="container text-center">
+      <h5 class="fw-bold mb-2 fs-4" style="color: #f25c2a;">
+        <span data-lang="vi">Khách hàng & Đối tác</span>
+        <span data-lang="en" class="d-none">Customers & Partners</span>
+      </h5>
+      <h2 class="text-uppercase fw-bold mb-4" style="color: #0054a6;">
+        <span data-lang="vi">Đồng Hành Cùng Chúng Tôi</span>
+        <span data-lang="en" class="d-none">Accompany Us</span>
+      </h2>
+
+
+      <div class="partner-carousel overflow-hidden" style="position: relative;">
+        <div class="partner-track d-flex align-items-center" style="width: max-content;">
+          <img src="images/logo-donga-1.jpg" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-delco.png" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-espressif.png" class="partner-logo mx-3" alt="Logo 3">
+          <img src="images/logo-evn.png" class="partner-logo mx-3" alt="Logo 4">
+          <img src="images/logo-hoaphat.png" class="partner-logo mx-3" alt="Logo 5">
+          <img src="images/logo-hvs-1.png" class="partner-logo mx-3" alt="Logo 10">
+
+          <img src="images/logo-donga-1.jpg" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-delco.png" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-espressif.png" class="partner-logo mx-3" alt="Logo 3">
+          <img src="images/logo-evn.png" class="partner-logo mx-3" alt="Logo 4">
+          <img src="images/logo-hoaphat.png" class="partner-logo mx-3" alt="Logo 5">
+          <img src="images/logo-hvs-1.png" class="partner-logo mx-3" alt="Logo 10">
+
+
+        </div>
+      </div>
+      <div class="partner-carousel overflow-hidden" style="position: relative;">
+        <div class="partner-track d-flex align-items-center" style="width: max-content;">
+          <img src="images/logo-infineon.png" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-lytutrong.jpg" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-mobifone.png" class="partner-logo mx-3" alt="Logo 3">
+          <img src="images/logo-onsemi.jpg" class="partner-logo mx-3" alt="Logo 4">
+          <img src="images/logo-pmc.png" class="partner-logo mx-3" alt="Logo 5">
+          <img src="images/logo-qualcomm.png" class="partner-logo mx-3" alt="Logo 10">
+
+          <img src="images/logo-infineon.png" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-lytutrong.jpg" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-mobifone.png" class="partner-logo mx-3" alt="Logo 3">
+          <img src="images/logo-onsemi.jpg" class="partner-logo mx-3" alt="Logo 4">
+          <img src="images/logo-pmc.png" class="partner-logo mx-3" alt="Logo 5">
+          <img src="images/logo-qualcomm.png" class="partner-logo mx-3" alt="Logo 10">
+
+
+        </div>
+      </div>
+      <div class="partner-carousel overflow-hidden" style="position: relative;">
+        <div class="partner-track d-flex align-items-center" style="width: max-content;">
+          <!-- Lặp logo để tạo hiệu ứng loop -->
+          <img src="images/logo-quectel.png" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-realtek.png" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-sonha.png" class="partner-logo mx-3" alt="Logo 3">
+          <img src="images/logo-teltonika-1.png" class="partner-logo mx-3" alt="Logo 4">
+          <img src="images/logo-texas.png" class="partner-logo mx-3" alt="Logo 5">
+          <img src="images/logo-tpdanang-1.png" class="partner-logo mx-3" alt="Logo 10">
+
+
+          <!-- Clone logo để tạo vòng lặp mượt -->
+          <img src="images/logo-tpvungtau.png" class="partner-logo mx-3" alt="Logo 6">
+          <img src="images/logo-viettel.png" class="partner-logo mx-3" alt="Logo 7">
+          <img src="images/logo-vineco.png" class="partner-logo mx-3" alt="Logo 8">
+          <img src="images/logo-quectel.png" class="partner-logo mx-3" alt="Logo 1">
+          <img src="images/logo-realtek.png" class="partner-logo mx-3" alt="Logo 2">
+          <img src="images/logo-sonha.png" class="partner-logo mx-3" alt="Logo 3">
+
+
         </div>
       </div>
     </div>
   </section>
-
-<!-- Hệ sinh thái Vconnex -->
-<section class="container py-5">
-  <h2 class="text-center text-uppercase fw-bold mb-3 text-primary">Hệ sinh thái Vconnex</h2>
-  <p class="text-center mb-5">
-    Hệ sinh thái Nhà thông minh Vconnex không ngừng mở rộng và phát triển với mục tiêu mang đến những giải pháp thiết thực nhất cho mọi gia đình, nổi bật lên trên thị trường với các đặc tính khác biệt: An ninh – An toàn – Tiết kiệm.
-  </p>
-  <p class="text-center mb-5">
-    Mỗi sản phẩm Vconnex Smart Home là một thiết bị IoT hoàn thiện khi có giao thức truyền thông linh hoạt; ứng dụng công nghệ edge computing; over the air...và hoạt động trên nền tảng Internet of Things theo tiêu chuẩn quốc tế. Các thiết bị này hoàn toàn có thể hoạt động độc lập cũng như sẵn sàng gia nhập hệ thống lớn, đạt độ bảo mật cao.
-  </p>
-
-  <div class="row g-4 justify-content-center">
-    <!-- Sản phẩm 1 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-cong-tac-thong-minh.webp" class="img-fluid w-100" alt="Công tắc thông minh">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+    <!-- Modal Tư vấn -->
+    <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="consultationModalLabel">Đăng ký tư vấn</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+          </div>
+          <div class="modal-body">
+            <form id="consultationForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Ghi chú</label>
+                <textarea class="form-control" id="message" name="message" rows="3"
+                  placeholder="Ghi chú thêm (nếu có)..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="solution" class="form-label">Gói quan tâm</label>
+                <input type="text" class="form-control" id="solution" readonly>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-primary">Gửi tư vấn</button>
+              </div>
+            </form>
+            <div id="consultationSuccess" class="alert alert-success d-none mt-3">
+              ✅ Đăng ký tư vấn thành công!
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Sản phẩm 2 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-khoa-cua-thong-minh.webp" class="img-fluid w-100" alt="Khóa cửa thông minh">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <h6>VỀ VCONNEX</h6>
+            <ul>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Hướng dẫn sử dụng</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+              <li><a href="#">Chính sách bảo hành</a></li>
+              <li><a href="#">Chính sách giao hàng</a></li>
+            </ul>
+            <img src="/images/logoSaleNoti-300x114-1.png" alt="Thông báo">
+            <img src="/images/dmca-badge-w200-5x1-10.png" alt="DMCA">
+          </div>
+          <div class="col-md-3">
+            <h6>GIẢI PHÁP</h6>
+            <ul>
+              <li><a href="#">Nhà thông minh</a></li>
+              <li><a href="#">Quản lý tòa nhà</a></li>
+              <li><a href="#">Nhà máy thông minh</a></li>
+              <li><a href="#">Nông nghiệp thông minh</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6>ỨNG DỤNG</h6>
+            <ul>
+              <li>Vhomenex (Android)</li>
+              <li>Vhomenex (iOS)</li>
+            </ul>
+            <h6 class="mt-4">KẾT NỐI</h6>
+            <ul class="d-flex gap-3">
+              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+            <h6 class="mt-4">CỘNG ĐỒNG</h6>
+            <p>Khởi nghiệp Smart Home</p>
+          </div>
+          <div class="col-md-3">
+            <h6>LIÊN HỆ</h6>
+            <p>Email: info@vconnex.vn</p>
+            <p>Hotline: 086 826 6639</p>
+            <p>Miền Bắc: 086 826 6637</p>
+            <p>Miền Trung: 086 926 6630</p>
+            <p>Miền Nam: 086 926 6631</p>
+            <p>Hà Nội: Tầng 4, The Sun, Mễ Trì Hạ</p>
+            <p>Đà Nẵng: Tầng 6, 30/4, Hòa Cường</p>
+            <p>Hồ Chí Minh: 171 Nguyễn Thị Nhung, Hiệp Bình, Thủ Đức</p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Sản phẩm 3 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-cong-to-dien-thong-minh.webp" class="img-fluid w-100" alt="Công tơ thông minh">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
-        </div>
-      </div>
-    </div>
-    <!-- Sản phẩm 4 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-camera-thong-minh.webp" class="img-fluid w-100" alt="Camera thông minh">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
-        </div>
-      </div>
-    </div>
-    <!-- Sản phẩm 5 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-cam-bien-khoi-thong-minh.webp" class="img-fluid w-100" alt="Cảm biến khói thông minh">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
-        </div>
-      </div>
-    </div>
-    <!-- Sản phẩm 6 -->
-    <div class="col-6 col-md-4 col-lg-4">
-      <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="/images/san-pham-dieu-khien-trung-tam.webp" class="img-fluid w-100" alt="Điều khiển trung tâm">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white text-center py-2">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
+    <script>
+      // Gắn sự kiện cho tất cả nút "Tư vấn ngay"
+      document.querySelectorAll('.btn.btn-danger').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const title = this.closest('.d-flex.flex-column').querySelector('h5').textContent;
+          document.getElementById('solution').value = title;
+          document.getElementById('consultationForm').classList.remove('d-none');
+          document.getElementById('consultationSuccess').classList.add('d-none');
+          const modal = new bootstrap.Modal(document.getElementById('consultationModal'));
+          modal.show();
+        });
+      });
 
+      // Gửi dữ liệu tới server
+      document.getElementById('consultationForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
 
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          solution: document.getElementById('solution').value.trim(),
+          message: document.getElementById('message').value.trim()
+        };
 
+        try {
+          const res = await fetch('/consultation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
 
-  <!-- JS xử lý nút giải pháp -->
-  <script>
-    const buttons = document.querySelectorAll('#solutionButtons button');
-    const image = document.getElementById('solutionImage');
-    const title = document.getElementById('solutionTitle');
-    const desc = document.getElementById('solutionDesc');
+          if (res.ok) {
+            document.getElementById('consultationForm').classList.add('d-none');
+            document.getElementById('consultationSuccess').classList.remove('d-none');
+          } else {
+            alert("Lỗi gửi tư vấn. Vui lòng thử lại.");
+          }
+        } catch (err) {
+          console.error(err);
+          alert("Không thể kết nối tới máy chủ.");
+        }
+      });
+    </script>
+    <script>
+      function setLanguage(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.classList.toggle('d-none', el.getAttribute('data-lang') !== lang);
+        });
+        const flagIcon = document.getElementById('flag-icon');
+        if (lang === 'vi') {
+          flagIcon.src = 'https://flagcdn.com/w40/vn.png';
+          flagIcon.alt = 'VN';
+        } else {
+          flagIcon.src = 'https://flagcdn.com/w40/gb.png';
+          flagIcon.alt = 'EN';
+        }
+      }
+    </script>
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => {
-          b.classList.remove('btn-primary');
-          b.classList.add('btn-light', 'border');
-          const icon = b.querySelector('i');
-          if (icon) icon.classList.add('text-secondary');
+    <script>
+      document.querySelectorAll('.scrollable-section').forEach(section => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        section.addEventListener('mousedown', (e) => {
+          isDown = true;
+          section.classList.add('active');
+          startX = e.pageX - section.offsetLeft;
+          scrollLeft = section.scrollLeft;
         });
 
-        btn.classList.remove('btn-light', 'border');
-        btn.classList.add('btn-primary');
-        const icon = btn.querySelector('i');
-        if (icon) icon.classList.remove('text-secondary');
+        section.addEventListener('mouseleave', () => {
+          isDown = false;
+          section.classList.remove('active');
+        });
 
-        image.src = btn.getAttribute('data-img');
-        title.textContent = btn.getAttribute('data-title');
-        desc.textContent = btn.getAttribute('data-desc');
+        section.addEventListener('mouseup', () => {
+          isDown = false;
+          section.classList.remove('active');
+        });
+
+        section.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - section.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          section.scrollLeft = scrollLeft - walk;
+        });
       });
-    });
-  </script>
-            <section class="container my-5">
-  <h2 class="text-center text-uppercase fw-bold text-primary mb-3">Gói giải pháp<br>NHÀ THÔNG MINH VCONNEX MẪU</h2>
-  <p class="text-center mb-4">
-    Chúng tôi gợi ý gói giải pháp Nhà thông minh Vconnex cho các loại nhà phổ biến như chung cư 2–3 phòng ngủ; nhà phố; biệt thự…<br>
-    Bạn cũng có thể tự thiết kế gói giải pháp cho nhà của mình hoặc để chuyên gia Smart Home tư vấn giúp bạn nhé!
-  </p>
-  <p class="text-center">
-    <a href="#" class="fw-semibold text-danger text-decoration-none">Tư vấn gói theo nhu cầu &rarr;</a>
-  </p>
+    </script>
+    <script>
+      function enableDragScroll(containerSelector) {
+        const scrollContainer = document.querySelector(containerSelector);
+        if (!scrollContainer) return;
 
-  <div class="row mt-4 g-4 justify-content-center">
-    <!-- Căn hộ chung cư -->
-    <div class="col-md-4 d-flex">
-      <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
-        <div class="flex-grow-1">
-          <h5 class="fw-bold text-primary mb-3">Căn hộ chung cư</h5>
-          <ul class="list-unstyled mb-4">
-            <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
-            <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
-            <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
-            <li><i class="bi bi-phone me-2"></i>An ninh thông minh</li>
-          </ul>
-        </div>
-        <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
-          <span class="text-primary fw-bold">Giá chỉ từ<br>15.000.000 VNĐ</span>
-          <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
-        </div>
-      </div>
-    </div>
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-    <!-- Nhà mái & Nhà tầng -->
-    <div class="col-md-4 d-flex">
-      <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
-        <div class="flex-grow-1">
-          <h5 class="fw-bold text-primary mb-3">Nhà mái & Nhà tầng</h5>
-          <ul class="list-unstyled mb-4">
-            <li><i class="bi bi-door-open-fill me-2"></i>Cổng/cửa cuốn thông minh</li>
-            <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
-            <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
-            <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
-            <li><i class="bi bi-fire me-2"></i>Phòng cháy thông minh</li>
-          </ul>
-        </div>
-        <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
-          <span class="text-primary fw-bold">Giá chỉ từ<br>25.000.000 VNĐ</span>
-          <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
-        </div>
-      </div>
-    </div>
+        scrollContainer.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - scrollContainer.offsetLeft;
+          scrollLeft = scrollContainer.scrollLeft;
+        });
 
-    <!-- Biệt thự -->
-    <div class="col-md-4 d-flex">
-      <div class="bg-white shadow-sm rounded-4 p-4 border w-100 d-flex flex-column">
-        <div class="flex-grow-1">
-          <h5 class="fw-bold text-primary mb-3">Biệt thự</h5>
-          <ul class="list-unstyled mb-4">
-            <li><i class="bi bi-key-fill me-2"></i>Khóa cửa thông minh</li>
-            <li><i class="bi bi-door-open-fill me-2"></i>Cổng/cửa cuốn thông minh</li>
-            <li><i class="bi bi-lightbulb-fill me-2"></i>Chiếu sáng thông minh</li>
-            <li><i class="bi bi-house-fill me-2"></i>Tự động hóa thông minh</li>
-            <li><i class="bi bi-shield-lock-fill me-2"></i>An toàn điện thông minh</li>
-            <li><i class="bi bi-fire me-2"></i>Phòng cháy thông minh</li>
-            <li><i class="bi bi-columns-gap me-2"></i>Rèm thông minh</li>
-          </ul>
-        </div>
-        <div class="d-flex justify-content-between align-items-center pt-2 mt-auto border-top">
-          <span class="text-primary fw-bold">Giá chỉ từ<br>40.000.000 VNĐ</span>
-          <a href="#" class="btn btn-danger btn-sm">Tư vấn ngay</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Modal Tư vấn -->
-<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content rounded-4">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="consultationModalLabel">Đăng ký tư vấn</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
-      </div>
-      <div class="modal-body">
-        <form id="consultationForm">
-          <div class="mb-3">
-            <label for="name" class="form-label">Họ và tên</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Số điện thoại</label>
-            <input type="tel" class="form-control" id="phone" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Ghi chú</label>
-            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ghi chú thêm (nếu có)..."></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="solution" class="form-label">Gói quan tâm</label>
-            <input type="text" class="form-control" id="solution" readonly>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-primary">Gửi tư vấn</button>
-          </div>
-        </form>
-        <div id="consultationSuccess" class="alert alert-success d-none mt-3">
-          ✅ Đăng ký tư vấn thành công!
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <footer>
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-3">
-          <h6>VỀ VCONNEX</h6>
-          <ul>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Hướng dẫn sử dụng</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
-            <li><a href="#">Chính sách bảo hành</a></li>
-            <li><a href="#">Chính sách giao hàng</a></li>
-          </ul>
-          <img src="/images/logoSaleNoti-300x114-1.png" alt="Thông báo">
-          <img src="/images/dmca-badge-w200-5x1-10.png" alt="DMCA">
-        </div>
-        <div class="col-md-3">
-          <h6>GIẢI PHÁP</h6>
-          <ul>
-            <li><a href="#">Nhà thông minh</a></li>
-            <li><a href="#">Quản lý tòa nhà</a></li>
-            <li><a href="#">Nhà máy thông minh</a></li>
-            <li><a href="#">Nông nghiệp thông minh</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h6>ỨNG DỤNG</h6>
-          <ul>
-            <li>Vhomenex (Android)</li>
-            <li>Vhomenex (iOS)</li>
-          </ul>
-          <h6 class="mt-4">KẾT NỐI</h6>
-          <ul class="d-flex gap-3">
-            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-          </ul>
-          <h6 class="mt-4">CỘNG ĐỒNG</h6>
-          <p>Khởi nghiệp Smart Home</p>
-        </div>
-        <div class="col-md-3">
-          <h6>LIÊN HỆ</h6>
-          <p>Email: info@vconnex.vn</p>
-          <p>Hotline: 086 826 6639</p>
-          <p>Miền Bắc: 086 826 6637</p>
-          <p>Miền Trung: 086 926 6630</p>
-          <p>Miền Nam: 086 926 6631</p>
-          <p>Hà Nội: Tầng 4, The Sun, Mễ Trì Hạ</p>
-          <p>Đà Nẵng: Tầng 6, 30/4, Hòa Cường</p>
-          <p>Hồ Chí Minh: 171 Nguyễn Thị Nhung, Hiệp Bình, Thủ Đức</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-<script>
-  // Gắn sự kiện cho tất cả nút "Tư vấn ngay"
-  document.querySelectorAll('.btn.btn-danger').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const title = this.closest('.d-flex.flex-column').querySelector('h5').textContent;
-      document.getElementById('solution').value = title;
-      document.getElementById('consultationForm').classList.remove('d-none');
-      document.getElementById('consultationSuccess').classList.add('d-none');
-      const modal = new bootstrap.Modal(document.getElementById('consultationModal'));
-      modal.show();
-    });
-  });
+        scrollContainer.addEventListener('mouseleave', () => {
+          isDown = false;
+        });
 
-  // Gửi dữ liệu tới server
-  document.getElementById('consultationForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+        scrollContainer.addEventListener('mouseup', () => {
+          isDown = false;
+        });
 
-    const formData = {
-      name: document.getElementById('name').value.trim(),
-      phone: document.getElementById('phone').value.trim(),
-      solution: document.getElementById('solution').value.trim(),
-      message: document.getElementById('message').value.trim()
-    };
-
-    try {
-      const res = await fetch('/consultation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      if (res.ok) {
-        document.getElementById('consultationForm').classList.add('d-none');
-        document.getElementById('consultationSuccess').classList.remove('d-none');
-      } else {
-        alert("Lỗi gửi tư vấn. Vui lòng thử lại.");
+        scrollContainer.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - scrollContainer.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          scrollContainer.scrollLeft = scrollLeft - walk;
+        });
       }
-    } catch (err) {
-      console.error(err);
-      alert("Không thể kết nối tới máy chủ.");
-    }
-  });
-</script>
+
+      enableDragScroll('.awards-scroll');
+      enableDragScroll('.partner-track');
+      enableDragScroll('.banner-track');
+    </script>
+    <script>
+      document.querySelectorAll('.partner-carousel').forEach(carousel => {
+        const track = carousel.querySelector('.partner-track');
+
+        const logos = Array.from(track.children);
+        logos.forEach(logo => {
+          const clone = logo.cloneNode(true);
+          track.appendChild(clone);
+        });
+
+        let isDown = false;
+        let startX, scrollLeft;
+
+        carousel.addEventListener('mousedown', e => {
+          isDown = true;
+          startX = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => isDown = false);
+        carousel.addEventListener('mouseup', () => isDown = false);
+
+        carousel.addEventListener('mousemove', e => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          const walk = (x - startX) * 2;
+          carousel.scrollLeft = scrollLeft - walk;
+        });
+      });
+    </script>
+    <script>
+      const bannerTrack = document.querySelector('.banner-track');
+      let isDown = false;
+      let startX, scrollLeft;
+
+      bannerTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - bannerTrack.offsetLeft;
+        scrollLeft = bannerTrack.scrollLeft;
+        bannerTrack.classList.add('grabbing');
+      });
+
+      bannerTrack.addEventListener('mouseleave', () => {
+        isDown = false;
+        bannerTrack.classList.remove('grabbing');
+      });
+
+      bannerTrack.addEventListener('mouseup', () => {
+        isDown = false;
+        bannerTrack.classList.remove('grabbing');
+      });
+
+      bannerTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - bannerTrack.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        bannerTrack.scrollLeft = scrollLeft - walk;
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll("#product-menu a");
+        const productGroups = document.querySelectorAll(".product-group");
+        menuItems.forEach(item => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+            menuItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+            productGroups.forEach(group => group.classList.add("d-none"));
+            const targetId = item.getAttribute("data-target");
+            const targetGroup = document.getElementById(targetId);
+            if (targetGroup) {
+              targetGroup.classList.remove("d-none");
+            }
+          });
+        });
+      });
+    </script>
+    <div class="floating-contact">
+      <a href="https://www.facebook.com/messages/t/405654382825964" target="_blank">
+        <img src="images/chattt.png" alt="Messenger" />
+      </a>
+      <a href="https://zalo.me/yourzalo" target="_blank">
+        <img src="images/zalo.png" alt="Zalo" />
+      </a>
+      <a href="tel:0373297705">
+        <img src="images/phone-call.png" alt="Phone" />
+      </a>
+    </div>
 
 
 </body>
+
 </html>
- 
