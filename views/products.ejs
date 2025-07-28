@@ -97,6 +97,113 @@
       max-width: 120px;
       margin-top: 10px;
     }
+    body {
+      padding-top: 75px;
+    }
+
+    * {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn.btn-danger:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+
+    .btn.btn-primary:hover {
+      background-color: #004080;
+      border-color: #003366;
+    }
+
+    .text-primary:hover {
+      color: #0056b3 !important;
+    }
+
+    a.text-decoration-none:hover {
+      text-decoration: underline !important;
+    }
+
+    .card:hover,
+    .rounded-4:hover,
+    .position-relative:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .position-relative img {
+      transition: transform 0.3s ease;
+    }
+
+    .position-relative:hover img {
+      transform: scale(1.03);
+    }
+
+    #solutionButtons button:hover {
+      background-color: #f0f8ff !important;
+      border-color: #007bff;
+      transform: translateX(5px);
+    }
+
+    .modal-content {
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    button,
+    a.btn {
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0d1a3a;
+      color: #fff;
+      padding: 40px 0;
+      font-size: 15px;
+    }
+
+    footer h6 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      border-left: 4px solid #f25a29;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer ul li a {
+      color: #cfd8e1;
+      text-decoration: none;
+    }
+
+    footer img {
+      max-width: 120px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
