@@ -510,27 +510,52 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
       </div>
       <div class="modal-body">
-        <form id="consultationForm">
-          <div class="mb-3">
-            <label for="name" class="form-label">Họ và tên</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Số điện thoại</label>
-            <input type="tel" class="form-control" id="phone" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Ghi chú</label>
-            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ghi chú thêm (nếu có)..."></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="solution" class="form-label">Gói quan tâm</label>
-            <input type="text" class="form-control" id="solution" readonly>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-primary">Gửi tư vấn</button>
-          </div>
-        </form>
+              <form id="consultationForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Họ và tên</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Số điện thoại</label>
+    <input type="tel" class="form-control" id="phone" name="phone" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+
+<div class="mb-3">
+  <label for="location" class="form-label">Địa chỉ</label>
+  <select class="form-select" id="location" name="location" required>
+    <option value="">-- Chọn tỉnh/thành phố --</option>
+    <option value="Hà Nội">Hà Nội</option>
+    <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+    <option value="Đà Nẵng">Đà Nẵng</option>
+    <option value="Cần Thơ">Cần Thơ</option>
+    <option value="Hải Phòng">Hải Phòng</option>
+    <option value="Quảng Trị">Quảng Trị</option>
+    <!-- Bạn có thể thêm các tỉnh khác tùy ý -->
+  </select>
+</div>
+
+  <div class="mb-3">
+    <label for="message" class="form-label">Ghi chú</label>
+    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ghi chú thêm (nếu có)..."></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="solution" class="form-label">Gói quan tâm</label>
+    <input type="text" class="form-control" id="solution" name="solution" readonly>
+  </div>
+
+  <div class="text-end">
+    <button type="submit" class="btn btn-primary">Gửi tư vấn</button>
+  </div>
+</form>
+
+
         <div id="consultationSuccess" class="alert alert-success d-none mt-3">
           ✅ Đăng ký tư vấn thành công!
         </div>
@@ -605,36 +630,40 @@
     });
   });
 
-      // Gửi dữ liệu tới server
-      document.getElementById('consultationForm').addEventListener('submit', async function (e) {
-        e.preventDefault();
+  // Gửi dữ liệu tới server
+  document.getElementById('consultationForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
 
     const formData = {
       name: document.getElementById('name').value.trim(),
       phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),         // ✅ BỔ SUNG
+      location: document.getElementById('location').value.trim(),   // ✅ BỔ SUNG
       solution: document.getElementById('solution').value.trim(),
       message: document.getElementById('message').value.trim()
     };
 
-        try {
-          const res = await fetch('/consultation', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-          });
+    try {
+      const res = await fetch('/consultation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
       if (res.ok) {
         document.getElementById('consultationForm').classList.add('d-none');
         document.getElementById('consultationSuccess').classList.remove('d-none');
+        document.getElementById('consultationForm').reset();
       } else {
-        alert("Lỗi gửi tư vấn. Vui lòng thử lại.");
+        alert("❌ Lỗi gửi tư vấn. Vui lòng thử lại.");
       }
     } catch (err) {
-      console.error(err);
+      console.error("❌ Lỗi kết nối:", err);
       alert("Không thể kết nối tới máy chủ.");
     }
   });
 </script>
+
 
 
 </body>

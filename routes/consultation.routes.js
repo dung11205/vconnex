@@ -6,6 +6,7 @@ const Consultation = require('../models/consultation.model');
 // POST /consultation
 router.post('/', async (req, res) => {
   try {
+    console.log("📦 req.body nhận được:", req.body);
     const { name, phone, solution, message, email, location } = req.body;
 
     // Kiểm tra tất cả các trường bắt buộc
