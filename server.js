@@ -2,15 +2,16 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const session = require('express-session');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
 if (!process.env.MONGODB_URI) {
-  console.error("Thiếu MONGODB_URI trong file .env");
+  console.error("❌ Thiếu MONGODB_URI trong file .env");
   process.exit(1);
 }
 
-const app = express();  
+const app = express();
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -24,39 +25,38 @@ app.use(session({
   secret: 'vconnex_secret_key',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 3600000 } 
+  cookie: { maxAge: 3600000 }
 }));
 
-// MongoDB Connection
-(require('mongoose')).connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connected'))
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected'))
   .catch(err => {
-    console.error('MongoDB error:', err);
+    console.error('❌ MongoDB connection error:', err);
     process.exit(1);
   });
 
 // Routes
 const productRoutes = require('./routes/product.routes');
-const apiProductRoutes = require('./routes/product.api'); 
+const apiProductRoutes = require('./routes/product.api');
 const consultationRoutes = require('./routes/consultation.routes');
 const adminRoutes = require('./routes/admin.routes');
 const featuredRoutes = require('./routes/featured.routes');
 const supportRoutes = require('./routes/support.routes');
 
-app.use('/products', productRoutes);           
-app.use('/api/products', apiProductRoutes);    
+app.use('/products', productRoutes);
+app.use('/api/products', apiProductRoutes);
 app.use('/consultation', consultationRoutes);
 app.use('/featured', featuredRoutes);
-app.use('/support', supportRoutes); // ✅ Đã có route cho trang hỗ trợ
+app.use('/support', supportRoutes);
 app.use('/admin', adminRoutes);
-app.use(express.static('public'));
 
-// Trang chủ
+// Home page
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-// Trang giải pháp
+// Solutions page
 app.get('/solutions', (req, res) => {
   res.render('solutions');
 });
