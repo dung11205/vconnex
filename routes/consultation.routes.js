@@ -6,7 +6,7 @@ const Consultation = require('../models/consultation.model');
 // POST /consultation
 router.post('/', async (req, res) => {
   try {
-    console.log("📦 req.body nhận được:", req.body);
+    console.log(" req.body nhận được:", req.body);
     const { name, phone, solution, message, email, location } = req.body;
 
     // Kiểm tra tất cả các trường bắt buộc
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 
     res.status(200).json({ success: true });
   } catch (error) {
-    console.error("❌ Error saving consultation:", error);
+    console.error(" Error saving consultation:", error);
     res.status(500).json({ success: false, message: "Lỗi server" });
   }
 });

@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 dotenv.config();
 
 if (!process.env.MONGODB_URI) {
-  console.error("❌ Thiếu MONGODB_URI trong file .env");
+  console.error(" Thiếu MONGODB_URI trong file .env");
   process.exit(1);
 }
 
@@ -30,9 +30,9 @@ app.use(session({
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ MongoDB connected'))
+  .then(() => console.log(' MongoDB connected'))
   .catch(err => {
-    console.error('❌ MongoDB connection error:', err);
+    console.error(' MongoDB connection error:', err);
     process.exit(1);
   });
 
@@ -67,7 +67,8 @@ app.use((req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
+
